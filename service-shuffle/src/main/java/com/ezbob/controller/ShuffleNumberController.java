@@ -43,8 +43,8 @@ public class ShuffleNumberController {
 
 
         Random random = new Random();
-        for (int i = 0; i < number; i++) {
-            int randomIndex = random.nextInt(number);
+        for (int i = number - 1; i > 0; i--) {
+            int randomIndex = random.nextInt(i + 1);
             int temp = array[randomIndex];
             array[randomIndex] = array[i];
             array[i] = temp;
