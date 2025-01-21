@@ -1,26 +1,12 @@
 # ezbob-sb-test
 ## Overview
 
-
+```sh
 ezbob-sb-test
+```
+is a Spring Boot project with two modules: 
 
- is a Spring Boot project with two modules: 
-
-service-log
-
- and 
-
-service-shuffle
-
-. The 
-
-service-log
-
- module handles logging, while the 
-
-service-shuffle
-
- module provides an API to shuffle numbers.
+``` service-log ``` and ``` service-shuffle ```. The ```service-log``` module handles logging, while the ```service-shuffle``` module provides an API to shuffle numbers.
 
 ## Modules
 - **service-log**: Provides logging services.
@@ -43,11 +29,7 @@ service-shuffle
    mvn clean install
    ```
 
-3. Run the 
-
-service-shuffle
-
- module:
+3. Run the ```service-shuffle``` module:
    ```sh
    cd service-shuffle
    mvn spring-boot:run
@@ -58,17 +40,17 @@ service-shuffle
 ### Shuffle Number
 - **URL**: `/api/shuffle`
 - **Method**: `POST`
-- **Request Param**: 
-
-number
-
- (int)
+- **Request Param**: ```number``` (int)
 - **Response**: Shuffled array of numbers
 
 ## Configuration
 - **service-shuffle/src/main/resources/application.properties**:
   ```properties
   service.log.url=http://localhost:8081/api/log
+  ```
+- **service-log/src/main/resources/application.properties**:
+  ```properties
+  server.port=8081
   ```
 
 ## License
